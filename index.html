@@ -3,23 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DIY AI Assistant – OpenClaw Setup on Ubuntu & Jetson</title>
-<meta name="description" content="DIY AI assistant with OpenClaw: setup guide for Ubuntu and NVIDIA Jetson. Or skip the DIY and get the ClawBox pre-configured. OpenClaw Ubuntu setup made easy. €549.">
-<meta name="keywords" content="diy ai assistant, openclaw setup, openclaw ubuntu, ubuntu openclaw, openclaw jetson nano, jetson nano openclaw, diy ai box, openclaw installation">
+<title>DIY AI Assistant — Build Your Own Local AI | ClawBox</title>
+<meta name="description" content="DIY AI assistant guide: build your own private, always-on AI with OpenClaw on NVIDIA Jetson or Ubuntu. Step-by-step setup or get ClawBox pre-built for €549.">
+<meta name="keywords" content="diy ai assistant, build ai assistant, openclaw setup, local ai assistant, jetson ai assistant, self hosted ai, diy ai box, openclaw installation, private ai assistant">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://diy-ai-assistant.com/">
-<meta property="og:title" content="DIY AI Assistant – OpenClaw Setup Guide">
-<meta property="og:description" content="DIY AI assistant: OpenClaw setup on Ubuntu & Jetson. Or get ClawBox pre-configured. €549.">
+<meta property="og:title" content="DIY AI Assistant — Build Your Own Local AI | ClawBox">
+<meta property="og:description" content="DIY AI assistant: complete guide to building a private, local AI assistant with OpenClaw. Or get ClawBox pre-configured for €549.">
 <meta property="og:url" content="https://diy-ai-assistant.com/">
 <meta property="og:image" content="https://openclawhardware.dev/clawbox-1.webp">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DIY AI Assistant – OpenClaw Setup Guide">
-<meta name="twitter:description" content="DIY AI assistant: OpenClaw setup on Ubuntu & Jetson. Or get ClawBox pre-configured. €549.">
+<meta name="twitter:title" content="DIY AI Assistant — Build Your Own Local AI | ClawBox">
+<meta name="twitter:description" content="DIY AI assistant: build a private, always-on AI with OpenClaw on Jetson or Ubuntu. Or get ClawBox pre-built.">
 <meta name="twitter:image" content="https://openclawhardware.dev/clawbox-1.webp">
-<!-- redirect removed for SEO -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HowTo","name":"DIY AI Assistant: OpenClaw Setup","description":"Set up your own AI assistant with OpenClaw on Ubuntu or NVIDIA Jetson.","step":[{"@type":"HowToStep","text":"Install Ubuntu or flash Jetson Orin Nano"},{"@type":"HowToStep","text":"Clone OpenClaw from GitHub"},{"@type":"HowToStep","text":"Configure your AI models and messaging platforms"},{"@type":"HowToStep","text":"Or skip the DIY — get a ClawBox pre-configured for €549"}]}
+{"@context":"https://schema.org","@type":"HowTo","name":"DIY AI Assistant: Build Your Own with OpenClaw","description":"Complete guide to building a DIY AI assistant using OpenClaw on NVIDIA Jetson Orin Nano or Ubuntu.","totalTime":"PT3H","estimatedCost":{"@type":"MonetaryAmount","currency":"EUR","value":"450"},"supply":[{"@type":"HowToSupply","name":"NVIDIA Jetson Orin Nano 8GB or Ubuntu PC"},{"@type":"HowToSupply","name":"512GB NVMe SSD"},{"@type":"HowToSupply","name":"Power supply and case"}],"step":[{"@type":"HowToStep","name":"Choose your hardware","text":"Select NVIDIA Jetson Orin Nano (recommended) or an Ubuntu PC with a dedicated GPU."},{"@type":"HowToStep","name":"Install the operating system","text":"Flash JetPack for Jetson or install Ubuntu 22.04+ on your PC."},{"@type":"HowToStep","name":"Install OpenClaw","text":"Clone the OpenClaw repository from GitHub and run the installer script."},{"@type":"HowToStep","name":"Configure AI models and messaging","text":"Set up your preferred AI models and connect Telegram, Discord, or WhatsApp."},{"@type":"HowToStep","name":"Test and deploy","text":"Verify everything works, then let it run 24/7 as your personal AI assistant."}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What hardware do I need for a DIY AI assistant?","acceptedAnswer":{"@type":"Answer","text":"The best hardware for a DIY AI assistant is the NVIDIA Jetson Orin Nano 8GB, which delivers 67 TOPS of AI performance at just 15W. You can also use a Raspberry Pi 5 or any Ubuntu PC with a dedicated GPU, but the Jetson offers the best performance-per-watt for always-on operation."}},{"@type":"Question","name":"How long does it take to build a DIY AI assistant?","acceptedAnswer":{"@type":"Answer","text":"Building a DIY AI assistant with OpenClaw takes 2-4 hours for someone comfortable with Linux. This includes OS installation, dependency setup, model configuration, and messaging platform integration. The ClawBox alternative ships pre-configured and sets up in 5 minutes."}},{"@type":"Question","name":"Is a DIY AI assistant better than using ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"A DIY AI assistant offers advantages ChatGPT cannot: your data stays private on your own hardware, it runs 24/7 without subscriptions, it can control your smart home and automate tasks, and it works offline. The tradeoff is initial setup effort and potentially smaller model sizes for local inference."}}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +31,13 @@
 body{font-family:'Quicksand',sans-serif;background:#1a1a2e;color:#eaeaea;min-height:100vh;line-height:1.7}
 .hero{text-align:center;padding:60px 20px 40px}
 .hero h1{font-size:clamp(1.8rem,5vw,2.8rem);color:#e94560;margin-bottom:16px;font-weight:700}
-.hero p{max-width:660px;margin:0 auto;font-size:1.1rem;color:#b0b0c8}
+.hero p{max-width:680px;margin:0 auto;font-size:1.1rem;color:#b0b0c8}
+.content-section{max-width:800px;margin:40px auto;padding:0 20px}
+.content-section h2{color:#e94560;font-size:1.5rem;margin-bottom:20px;font-weight:700}
+.content-section h3{color:#eaeaea;font-size:1.15rem;margin:24px 0 12px;font-weight:600}
+.content-section p,.content-section li{color:#b0b0c8;font-size:.97rem;margin-bottom:12px}
+.content-section ul{padding-left:20px;margin-bottom:16px}
+.content-section li{margin-bottom:8px}
 .steps{max-width:760px;margin:50px auto;padding:0 20px}
 .step{display:flex;gap:24px;align-items:flex-start;margin-bottom:36px;position:relative}
 .step::after{content:'';position:absolute;left:30px;top:68px;bottom:-36px;width:2px;background:linear-gradient(to bottom,#e94560 0%,#16213e 100%)}
@@ -38,86 +46,124 @@ body{font-family:'Quicksand',sans-serif;background:#1a1a2e;color:#eaeaea;min-hei
 .step-content{background:#16213e;border-radius:14px;padding:24px 28px;border:1px solid #243456;flex:1}
 .step-content h3{color:#e94560;margin-bottom:8px;font-size:1.1rem;font-weight:600}
 .step-content p{color:#b0b0c8;font-size:.95rem}
-.summary{max-width:700px;margin:30px auto;padding:0 20px;color:#b0b0c8;font-size:.95rem;text-align:center}
+.highlight-box{background:linear-gradient(135deg,rgba(233,69,96,.08),rgba(255,107,107,.05));border:1px solid rgba(233,69,96,.25);border-radius:14px;padding:28px;margin:30px 0}
+.highlight-box h3{color:#e94560;margin-top:0}
 .cta{text-align:center;padding:50px 20px}
 .cta h2{color:#eaeaea;margin-bottom:20px;font-size:1.3rem;font-weight:600}
 .cta a{display:inline-block;padding:16px 40px;background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;text-decoration:none;border-radius:12px;font-size:1.15rem;font-weight:700;transition:transform .2s}
 .cta a:hover{transform:scale(1.05)}
-.redirect{text-align:center;padding:20px;color:#4b5563;font-size:.8rem}
+details{background:#16213e;border-radius:12px;margin:12px 0;border:1px solid #243456}
+details summary{cursor:pointer;padding:20px;color:#e94560;font-weight:600;font-size:1.05rem}
+details div{padding:0 20px 20px;color:#b0b0c8}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9FY8Q06EX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q9FY8Q06EX');</script>
-<meta name="revised" content="2026-03-15">
+<meta name="revised" content="2026-03-23">
 </head>
 <body>
+
 <section class="hero">
-<h1>DIY AI Assistant: OpenClaw Setup on Ubuntu & Jetson</h1>
-<p>Want to build a <strong>DIY AI assistant</strong>? OpenClaw runs on <strong>Ubuntu</strong> and <strong>NVIDIA Jetson Nano</strong>. Follow the <strong>OpenClaw setup</strong> guide — or skip the DIY and get a ClawBox pre-configured for <strong>€549</strong>.</p>
+<h1>DIY AI Assistant: Build a Private, Always-On AI You Actually Own</h1>
+<p>A <strong>DIY AI assistant</strong> gives you what no cloud service can — complete privacy, zero subscriptions, and an AI that runs on your hardware around the clock. Here's everything you need to build one with OpenClaw.</p>
+</section>
+
+<section class="content-section">
+<h2>Why Build a DIY AI Assistant in 2026?</h2>
+<p>Cloud AI services like ChatGPT and Gemini are powerful, but they come with strings attached: monthly subscriptions that add up, your conversations stored on someone else's servers, and the constant dependency on an internet connection. A <strong>DIY AI assistant</strong> cuts all of those strings.</p>
+
+<p>When you build your own AI assistant, every prompt and response stays on hardware you physically control. There's no usage cap, no subscription fee, and no corporate policy deciding what your AI can or cannot do. Your assistant runs 24/7 — even when your internet goes down — handling everything from smart home automation to personal task management.</p>
+
+<h3>What Makes a Good DIY AI Assistant Platform?</h3>
+<p>The ideal <strong>DIY AI assistant</strong> platform balances three factors: raw AI compute power, energy efficiency for always-on operation, and software maturity. The NVIDIA Jetson Orin Nano hits all three — it delivers 67 TOPS of AI acceleration while sipping just 15 watts of power. That's less than a desk lamp, running inference that would cost $50+/month on cloud GPU instances.</p>
+
+<p>Compare that to common alternatives:</p>
+<ul>
+<li><strong>Raspberry Pi 5:</strong> Great for tinkering, but limited to CPU inference — painfully slow for serious AI workloads</li>
+<li><strong>Old desktop with GPU:</strong> Powerful but power-hungry (200-350W), noisy, and generates significant heat</li>
+<li><strong>Mac Mini M4:</strong> Capable but expensive (€800+) and not designed for headless 24/7 server operation</li>
+<li><strong>Jetson Orin Nano:</strong> Purpose-built for edge AI — 67 TOPS at 15W, compact, silent, and affordable</li>
+</ul>
+
+<h3>The Real Cost of DIY vs. Cloud AI</h3>
+<p>Running a <strong>DIY AI assistant</strong> costs you the hardware upfront and roughly €3-5/month in electricity. Compare that to ChatGPT Plus at €22/month — your DIY assistant pays for itself within 18-24 months while giving you far more capability: browser automation, messaging integration, smart home control, and custom workflows that cloud AI simply cannot do.</p>
+
+<div class="highlight-box">
+<h3>💡 The Honest Truth About DIY</h3>
+<p>Building a DIY AI assistant is rewarding but requires real technical skills. You'll need comfort with Linux, terminal commands, networking basics, and troubleshooting. Budget 3-5 hours for initial setup, plus ongoing time for updates and tweaks. If that sounds daunting, <a href="https://openclawhardware.dev/" style="color:#e94560;text-decoration:underline">ClawBox</a> ships with everything pre-configured — same hardware, same software, 5-minute setup.</p>
+</div>
 </section>
 
 <div class="steps">
+<h2 style="color:#e94560;text-align:center;margin-bottom:40px;font-size:1.6rem">DIY AI Assistant Setup: Step by Step</h2>
 <div class="step">
 <div class="step-circle">1</div>
 <div class="step-content">
-<h3>🐧 Install Ubuntu or Flash Jetson</h3>
-<p>OpenClaw Ubuntu installation: start with Ubuntu 20.04+ or flash your NVIDIA Jetson Orin Nano. The most popular platform for DIY AI assistants — OpenClaw runs natively on both.</p>
+<h3>🔧 Gather Your Hardware</h3>
+<p>Start with an NVIDIA Jetson Orin Nano 8GB developer kit (~€400), a 512GB NVMe SSD for model storage, and a quality power supply. Total parts cost: €430-500. The Jetson's 67 TOPS GPU gives your DIY AI assistant real inference speed — 15+ tokens/second on 7B parameter models.</p>
 </div>
 </div>
 <div class="step">
 <div class="step-circle">2</div>
 <div class="step-content">
-<h3>🟢 Clone OpenClaw from GitHub</h3>
-<p>Clone the OpenClaw repo and install dependencies. For maximum AI performance on Jetson Nano (Orin), the OpenClaw Jetson Nano combination gives you 67 TOPS of hardware-accelerated inference.</p>
+<h3>🐧 Install the Operating System</h3>
+<p>Flash NVIDIA JetPack 6.x to your Jetson, or install Ubuntu 22.04+ on a standard PC. JetPack includes CUDA, cuDNN, and TensorRT — all the acceleration libraries your DIY AI assistant needs for fast inference out of the box.</p>
 </div>
 </div>
 <div class="step">
 <div class="step-circle">3</div>
 <div class="step-content">
-<h3>🔧 Configure AI Models & Messaging</h3>
-<p>Configure your AI models and connect messaging platforms. OpenClaw Ubuntu setup takes 2-4 hours for experienced users. Hardware options: NVIDIA Jetson Orin Nano (67 TOPS), Raspberry Pi 5, or an old PC with Ubuntu.</p>
+<h3>🟢 Install OpenClaw</h3>
+<p>Clone the OpenClaw repository from GitHub and run the installer. OpenClaw is fully open-source with 184K+ stars — the most popular framework for building a persistent DIY AI assistant. It handles model management, messaging integration, and browser automation.</p>
 </div>
 </div>
 <div class="step">
 <div class="step-circle">4</div>
 <div class="step-content">
-<h3>📦 Or: Skip the DIY — Get ClawBox</h3>
-<p>Skip the DIY. The ClawBox comes with OpenClaw pre-installed on NVIDIA Jetson Orin Nano. Ubuntu OpenClaw setup already done. Plug in and go. No terminal commands needed. Whether DIY or ClawBox, OpenClaw is fully open source (184K+ GitHub stars).</p>
+<h3>💬 Connect Your Messaging Platforms</h3>
+<p>Wire up Telegram, Discord, WhatsApp, or all three. Your DIY AI assistant becomes reachable from any device — phone, laptop, or tablet. Configure AI models (local Llama, cloud Claude/GPT) depending on your performance needs.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-circle">5</div>
+<div class="step-content">
+<h3>🚀 Deploy and Run 24/7</h3>
+<p>Start OpenClaw as a system service and let it run. At 15W, the Jetson costs under €4/month in electricity. Your DIY AI assistant is now always available — no cloud dependency, no subscription, no data leaving your network.</p>
 </div>
 </div>
 </div>
 
-<p class="summary">Building a DIY AI assistant with OpenClaw is a great learning experience. But if you want the same result without the setup time — the ClawBox gives you OpenClaw Ubuntu on Jetson Orin Nano, pre-configured and ready to use. DIY spirit, zero hassle.</p>
+<section class="content-section">
+<h2>What Can a DIY AI Assistant Actually Do?</h2>
+<p>A properly configured DIY AI assistant goes far beyond chat. With OpenClaw, your assistant can:</p>
+<ul>
+<li><strong>Automate your browser:</strong> Fill forms, scrape data, monitor websites, manage social media posts</li>
+<li><strong>Control smart home devices:</strong> Integrate with Home Assistant for lights, thermostats, cameras</li>
+<li><strong>Manage your calendar and email:</strong> Read, summarize, draft replies, schedule events</li>
+<li><strong>Run scheduled tasks:</strong> Cron-based automation — daily summaries, weather reports, price monitoring</li>
+<li><strong>Act as a coding assistant:</strong> Review code, generate scripts, manage GitHub repos</li>
+<li><strong>Process documents:</strong> Analyze PDFs, images, and spreadsheets on-device with full privacy</li>
+</ul>
+<p>The key difference from cloud AI: your <strong>DIY AI assistant</strong> has persistent memory, runs continuously, and can take real actions — not just answer questions.</p>
+</section>
 
 <section style="max-width:800px;margin:40px auto;padding:0 20px">
-<h2 style="color:#e94560;text-align:center;margin-bottom:30px;font-size:1.6rem">Frequently Asked Questions</h2>
-<details style="background:#16213e;border-radius:12px;margin:12px 0;border:1px solid #243456">
-<summary style="cursor:pointer;padding:20px;color:#e94560;font-weight:600;font-size:1.1rem">How long does a DIY AI assistant setup take?</summary>
-<div style="padding:0 20px 20px;color:#b0b0c8">DIY AI assistant setup with OpenClaw takes 2-4 hours for experienced users. Installing dependencies, configuring models, and setting up messaging platforms requires technical knowledge.</div>
+<h2 style="color:#e94560;text-align:center;margin-bottom:30px;font-size:1.6rem">DIY AI Assistant FAQ</h2>
+<details>
+<summary>What hardware do I need for a DIY AI assistant?</summary>
+<div>The best hardware for a <strong>DIY AI assistant</strong> is the NVIDIA Jetson Orin Nano 8GB. It delivers 67 TOPS of AI performance at just 15 watts — enough for real-time inference on 7B+ parameter models. You'll also need a 512GB NVMe SSD (~€50) and a compatible power supply. Total budget: €430-500 for parts, or €549 for a <a href="https://openclawhardware.dev/" style="color:#e94560">ClawBox</a> with everything pre-assembled and pre-configured.</div>
 </details>
-<details style="background:#16213e;border-radius:12px;margin:12px 0;border:1px solid #243456">
-<summary style="cursor:pointer;padding:20px;color:#e94560;font-weight:600;font-size:1.1rem">What hardware do I need for a DIY AI assistant?</summary>
-<div style="padding:0 20px 20px;color:#b0b0c8">Best DIY AI assistant hardware: NVIDIA Jetson Orin Nano (67 TOPS), Raspberry Pi 5, or any Ubuntu-compatible PC. Jetson provides the best AI performance for your DIY build.</div>
+<details>
+<summary>How long does it take to build a DIY AI assistant?</summary>
+<div>Plan for 3-5 hours if you're comfortable with Linux and terminal commands. This covers hardware assembly, OS installation, OpenClaw setup, model configuration, and messaging platform integration. Most time is spent on configuration and testing. If you want the same result without the setup work, <a href="https://openclawhardware.dev/" style="color:#e94560">ClawBox</a> comes ready to use in about 5 minutes.</div>
 </details>
-<details style="background:#16213e;border-radius:12px;margin:12px 0;border:1px solid #243456">
-<summary style="cursor:pointer;padding:20px;color:#e94560;font-weight:600;font-size:1.1rem">Is DIY AI assistant cheaper than ClawBox?</summary>
-<div style="padding:0 20px 20px;color:#b0b0c8">DIY costs: NVIDIA Jetson Orin Nano (~€400) + case + storage + 4 hours setup time. ClawBox at €549 includes everything pre-configured. DIY saves minimal cost but requires significant time.</div>
-</details>
-<details style="background:#16213e;border-radius:12px;margin:12px 0;border:1px solid #243456">
-<summary style="cursor:pointer;padding:20px;color:#e94560;font-weight:600;font-size:1.1rem">Can I customize a DIY AI assistant later?</summary>
-<div style="padding:0 20px 20px;color:#b0b0c8">Yes! Both DIY and ClawBox run the same OpenClaw software. Full customization capabilities: custom models, APIs, automations, and integrations. OpenClaw is 100% open source.</div>
-</details>
-<details style="background:#16213e;border-radius:12px;margin:12px 0;border:1px solid #243456">
-<summary style="cursor:pointer;padding:20px;color:#e94560;font-weight:600;font-size:1.1rem">What skills do I need for DIY AI assistant?</summary>
-<div style="padding:0 20px 20px;color:#b0b0c8">DIY AI assistant requires: Linux/Ubuntu experience, command line skills, basic networking, and patience for troubleshooting. If you're not comfortable with these, ClawBox is the easier option.</div>
-</details>
-<details style="background:#16213e;border-radius:12px;margin:12px 0;border:1px solid #243456">
-<summary style="cursor:pointer;padding:20px;color:#e94560;font-weight:600;font-size:1.1rem">Where can I find DIY AI assistant tutorials?</summary>
-<div style="padding:0 20px 20px;color:#b0b0c8">Check the OpenClaw GitHub repository for setup guides, documentation, and community tutorials. The DIY community is active with hundreds of contributors sharing knowledge.</div>
+<details>
+<summary>Is a DIY AI assistant better than ChatGPT or Gemini?</summary>
+<div>A DIY AI assistant excels in areas cloud AI can't match: complete data privacy (nothing leaves your network), zero monthly subscriptions, 24/7 availability even offline, persistent memory across sessions, and the ability to take real actions like browser automation and smart home control. Cloud AI has larger models, but for a personal assistant that truly works for you, a <strong>DIY AI assistant</strong> is the better long-term investment.</div>
 </details>
 </section>
 
 <section style="max-width:900px;margin:40px auto;padding:0 20px">
-<h2 style="color:#e94560;text-align:center;margin-bottom:30px;font-size:1.6rem">DIY vs Pre-Built Comparison</h2>
+<h2 style="color:#e94560;text-align:center;margin-bottom:30px;font-size:1.6rem">DIY vs Pre-Built: Honest Comparison</h2>
 <div style="overflow-x:auto">
 <table style="width:100%;background:#16213e;border-radius:12px;border:1px solid #243456;border-collapse:collapse">
 <thead>
@@ -130,57 +176,36 @@ body{font-family:'Quicksand',sans-serif;background:#1a1a2e;color:#eaeaea;min-hei
 <tbody>
 <tr style="background:rgba(26,26,46,.7)">
 <td style="padding:14px;color:#b0b0c8">Setup Time</td>
-<td style="padding:14px;text-align:center;color:#ef4444">2-4 hours</td>
+<td style="padding:14px;text-align:center;color:#ef4444">3-5 hours</td>
 <td style="padding:14px;text-align:center;color:#10b981">5 minutes</td>
 </tr>
 <tr style="background:rgba(22,33,62,.9)">
-<td style="padding:14px;color:#b0b0c8">Technical Knowledge</td>
-<td style="padding:14px;text-align:center;color:#ef4444">Linux/Ubuntu skills needed</td>
-<td style="padding:14px;text-align:center;color:#10b981">Plug and play</td>
+<td style="padding:14px;color:#b0b0c8">Technical Skill Required</td>
+<td style="padding:14px;text-align:center;color:#ef4444">Linux, networking, CLI</td>
+<td style="padding:14px;text-align:center;color:#10b981">Plug in, scan QR</td>
 </tr>
 <tr style="background:rgba(26,26,46,.7)">
-<td style="padding:14px;color:#b0b0c8">Total Cost (Jetson)</td>
-<td style="padding:14px;text-align:center;color:#e94560">~€450-500</td>
-<td style="padding:14px;text-align:center;color:#10b981">€549</td>
+<td style="padding:14px;color:#b0b0c8">Hardware Cost</td>
+<td style="padding:14px;text-align:center;color:#e94560">~€430-500 (parts)</td>
+<td style="padding:14px;text-align:center;color:#10b981">€549 (complete)</td>
 </tr>
 <tr style="background:rgba(22,33,62,.9)">
-<td style="padding:14px;color:#b0b0c8">Support</td>
-<td style="padding:14px;text-align:center;color:#ef4444">Community only</td>
-<td style="padding:14px;text-align:center;color:#10b981">Official support</td>
+<td style="padding:14px;color:#b0b0c8">AI Performance</td>
+<td style="padding:14px;text-align:center;color:#10b981">67 TOPS (Jetson)</td>
+<td style="padding:14px;text-align:center;color:#10b981">67 TOPS (same Jetson)</td>
 </tr>
 <tr style="background:rgba(26,26,46,.7)">
-<td style="padding:14px;color:#b0b0c8">Customization</td>
-<td style="padding:14px;text-align:center;color:#10b981">Full control</td>
-<td style="padding:14px;text-align:center;color:#10b981">Full control</td>
+<td style="padding:14px;color:#b0b0c8">Support</td>
+<td style="padding:14px;text-align:center;color:#ef4444">Community forums</td>
+<td style="padding:14px;text-align:center;color:#10b981">Official team support</td>
+</tr>
+<tr style="background:rgba(22,33,62,.9)">
+<td style="padding:14px;color:#b0b0c8">Ongoing Monthly Cost</td>
+<td style="padding:14px;text-align:center;color:#10b981">~€4 electricity</td>
+<td style="padding:14px;text-align:center;color:#10b981">~€4 electricity</td>
 </tr>
 </tbody>
 </table>
-</div>
-</section>
-
-<section style="max-width:800px;margin:40px auto;padding:0 20px">
-<h2 style="color:#e94560;text-align:center;margin-bottom:30px;font-size:1.6rem">How DIY AI Assistant Works</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
-<div style="background:#16213e;border-radius:12px;padding:24px;border:1px solid #243456;text-align:center">
-<div style="background:rgba(233,69,96,.2);border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#e94560;font-weight:700;font-size:1.4rem">1</div>
-<h3 style="color:#e94560;margin-bottom:12px">Choose Hardware</h3>
-<p style="color:#b0b0c8;font-size:.92rem">Select your DIY platform: NVIDIA Jetson Orin Nano (best), Raspberry Pi 5, or Ubuntu PC.</p>
-</div>
-<div style="background:#16213e;border-radius:12px;padding:24px;border:1px solid #243456;text-align:center">
-<div style="background:rgba(233,69,96,.2);border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#e94560;font-weight:700;font-size:1.4rem">2</div>
-<h3 style="color:#e94560;margin-bottom:12px">Install OpenClaw</h3>
-<p style="color:#b0b0c8;font-size:.92rem">Clone from GitHub, install dependencies, configure models and messaging platforms.</p>
-</div>
-<div style="background:#16213e;border-radius:12px;padding:24px;border:1px solid #243456;text-align:center">
-<div style="background:rgba(233,69,96,.2);border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#e94560;font-weight:700;font-size:1.4rem">3</div>
-<h3 style="color:#e94560;margin-bottom:12px">Test & Debug</h3>
-<p style="color:#b0b0c8;font-size:.92rem">Troubleshoot issues, optimize performance, and configure your specific use case.</p>
-</div>
-<div style="background:#16213e;border-radius:12px;padding:24px;border:1px solid #243456;text-align:center">
-<div style="background:rgba(233,69,96,.2);border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#e94560;font-weight:700;font-size:1.4rem">4</div>
-<h3 style="color:#e94560;margin-bottom:12px">Deploy & Maintain</h3>
-<p style="color:#b0b0c8;font-size:.92rem">Run 24/7, handle updates, monitor performance, and expand capabilities over time.</p>
-</div>
 </div>
 </section>
 
@@ -197,72 +222,50 @@ body{font-family:'Quicksand',sans-serif;background:#1a1a2e;color:#eaeaea;min-hei
 <div style="font-weight:600">Personal AI Server</div>
 <div style="color:#b0b0c8;opacity:.7;font-size:.85rem">Self-hosted AI solutions</div>
 </a>
+<a href="https://self-hosted-ai-assistant.com" style="display:block;background:#16213e;border-radius:12px;padding:20px;border:1px solid #243456;color:#e94560;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+<div style="font-size:1.8rem;margin-bottom:8px">🔒</div>
+<div style="font-weight:600">Self-Hosted AI Assistant</div>
+<div style="color:#b0b0c8;opacity:.7;font-size:.85rem">Private AI on your terms</div>
+</a>
 <a href="https://jetson-ai-box.com" style="display:block;background:#16213e;border-radius:12px;padding:20px;border:1px solid #243456;color:#e94560;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
 <div style="font-size:1.8rem;margin-bottom:8px">🚀</div>
 <div style="font-weight:600">Jetson AI Box</div>
 <div style="color:#b0b0c8;opacity:.7;font-size:.85rem">NVIDIA Jetson AI hardware</div>
 </a>
-<a href="https://openclawhardware.dev/compare" style="display:block;background:#16213e;border-radius:12px;padding:20px;border:1px solid #243456;color:#e94560;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-<div style="font-size:1.8rem;margin-bottom:8px">⚖️</div>
-<div style="font-weight:600">Compare AI Hardware</div>
-<div style="color:#b0b0c8;opacity:.7;font-size:.85rem">ClawBox vs alternatives</div>
-</a>
-<a href="https://openclawhardware.dev/faq" style="display:block;background:#16213e;border-radius:12px;padding:20px;border:1px solid #243456;color:#e94560;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-<div style="font-size:1.8rem;margin-bottom:8px">❓</div>
-<div style="font-weight:600">FAQ</div>
-<div style="color:#b0b0c8;opacity:.7;font-size:.85rem">Common questions answered</div>
-</a>
-<a href="https://openclawhardware.dev/setup-guide" style="display:block;background:#16213e;border-radius:12px;padding:20px;border:1px solid #243456;color:#e94560;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-<div style="font-size:1.8rem;margin-bottom:8px">📖</div>
-<div style="font-weight:600">Setup Guide</div>
-<div style="color:#b0b0c8;opacity:.7;font-size:.85rem">Easy installation steps</div>
-</a>
 </div>
 </section>
 
 <section class="cta">
-<h2>Skip the DIY — ClawBox Pre-Configured — €549</h2>
+<h2>Don't Want the DIY Route? Get <a href="https://openclawhardware.dev/" style="color:#e94560;text-decoration:none">ClawBox</a> Pre-Configured — €549</h2>
 <a href="https://openclawhardware.dev/" target="_blank">Get ClawBox — €549 →</a>
 </section>
-
-
-<div class="related-sites" style="text-align:center;padding:30px 20px;border-top:1px solid rgba(255,107,53,0.15)">
-  <p style="color:#6b7280;font-size:.85rem;margin-bottom:10px">Related Resources:</p>
-  <a href="https://personal-ai-server.com" style="color:#ff6b35;text-decoration:none;margin:0 10px">Personal AI Server</a>
-  <a href="https://self-hosted-ai-assistant.com" style="color:#ff6b35;text-decoration:none;margin:0 10px">Self-Hosted AI Assistant</a>
-  <a href="https://jetson-ai-box.com" style="color:#ff6b35;text-decoration:none;margin:0 10px">Jetson AI Box</a>
-</div>
-<!-- redirect text removed for SEO -->
-<div class="related-resources" style="margin-top:2rem;padding:1rem;border-top:1px solid #eee;">
-<p><strong>Related Resources:</strong></p>
-<ul>
-<li><a href="https://openclaw-hardware.com">openclaw-hardware.com</a></li>
-<li><a href="https://clawbox.tech">clawbox.tech</a></li>
-<li><a href="https://jetson-ai-assistant.com">jetson-ai-assistant.com</a></li>
-<li><a href="https://self-hosted-ai-assistant.com">self-hosted-ai-assistant.com</a></li>
-<li><a href="https://ai-assistant-box.com">ai-assistant-box.com</a></li>
-</ul>
-</div>
-<div class="main-cta" style="margin:1rem 0;text-align:center;"><a href="https://openclawhardware.dev" style="display:inline-block;background:#2563eb;color:#fff;padding:0.75rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:bold;">Buy ClawBox — €549</a></div>
 
 <section style="padding:40px 20px;max-width:800px;margin:0 auto">
 <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:16px;color:#e2e8f0">ClawBox Network</h2>
 <p style="color:#94a3b8;margin-bottom:16px;font-size:0.9rem">Explore the ClawBox ecosystem — AI hardware, guides, and resources:</p>
 <ul style="columns:2;column-gap:24px;list-style:none;padding:0">
-<li><a href="http://private-ai-hardware.com/" title="private ai hardware — ClawBox AI Hardware">private ai hardware</a></li><li><a href="http://openclaw-browser.com/" title="openclaw browser — ClawBox AI Hardware">openclaw browser</a></li><li><a href="http://buy-ai-hardware.com/" title="buy ai hardware — ClawBox AI Hardware">buy ai hardware</a></li><li><a href="http://run-ai-locally.com/" title="run ai locally — ClawBox AI Hardware">run ai locally</a></li><li><a href="http://ai-agent-device.com/" title="ai agent device — ClawBox AI Hardware">ai agent device</a></li><li><a href="http://openclaw-windows.com/" title="openclaw windows — ClawBox AI Hardware">openclaw windows</a></li><li><a href="http://dedicated-ai-hardware.com/" title="dedicated ai hardware — ClawBox AI Hardware">dedicated ai hardware</a></li><li><a href="http://clawbox.gg/" title="clawbox gg — ClawBox AI Hardware">clawbox gg</a></li><li><a href="http://20w-ai-server.com/" title="20w ai server — ClawBox AI Hardware">20w ai server</a></li><li><a href="http://low-watt-ai.com/" title="low watt ai — ClawBox AI Hardware">low watt ai</a></li><li><a href="http://openclaw-mac.com/" title="openclaw mac — ClawBox AI Hardware">openclaw mac</a></li><li><a href="http://mini-ai-server.com/" title="mini ai server — ClawBox AI Hardware">mini ai server</a></li>
-<li><a href="https://openclawhardware.dev/" title="ClawBox Official Store — Buy AI Hardware"><strong>🏠 Official Store — openclawhardware.dev</strong></a></li>
+<li><a href="https://private-ai-hardware.com/" title="private ai hardware — ClawBox AI Hardware" style="color:#ff6b6b;text-decoration:none;font-size:.9rem;line-height:2.2">private ai hardware</a></li>
+<li><a href="https://buy-ai-hardware.com/" title="buy ai hardware — ClawBox AI Hardware" style="color:#ff6b6b;text-decoration:none;font-size:.9rem;line-height:2.2">buy ai hardware</a></li>
+<li><a href="https://run-ai-locally.com/" title="run ai locally — ClawBox AI Hardware" style="color:#ff6b6b;text-decoration:none;font-size:.9rem;line-height:2.2">run ai locally</a></li>
+<li><a href="https://ai-agent-device.com/" title="ai agent device — ClawBox AI Hardware" style="color:#ff6b6b;text-decoration:none;font-size:.9rem;line-height:2.2">ai agent device</a></li>
+<li><a href="https://dedicated-ai-hardware.com/" title="dedicated ai hardware — ClawBox AI Hardware" style="color:#ff6b6b;text-decoration:none;font-size:.9rem;line-height:2.2">dedicated ai hardware</a></li>
+<li><a href="https://low-watt-ai.com/" title="low watt ai — ClawBox AI Hardware" style="color:#ff6b6b;text-decoration:none;font-size:.9rem;line-height:2.2">low watt ai</a></li>
+<li><a href="https://mini-ai-server.com/" title="mini ai server — ClawBox AI Hardware" style="color:#ff6b6b;text-decoration:none;font-size:.9rem;line-height:2.2">mini ai server</a></li>
+<li><a href="https://edge-ai-hardware.com/" title="edge ai hardware — ClawBox AI Hardware" style="color:#ff6b6b;text-decoration:none;font-size:.9rem;line-height:2.2">edge ai hardware</a></li>
+<li><a href="https://no-cloud-ai.com/" title="no cloud ai — ClawBox AI Hardware" style="color:#ff6b6b;text-decoration:none;font-size:.9rem;line-height:2.2">no cloud ai</a></li>
+<li><a href="https://offline-ai-device.com/" title="offline ai device — ClawBox AI Hardware" style="color:#ff6b6b;text-decoration:none;font-size:.9rem;line-height:2.2">offline ai device</a></li>
+<li style="grid-column:1/-1"><a href="https://openclawhardware.dev/" title="ClawBox Official Store — Buy AI Hardware" style="color:#e94560;text-decoration:none;font-weight:700;font-size:.95rem;line-height:2.2">🏠 Official Store — openclawhardware.dev</a></li>
 </ul>
 </section>
-</body>
 
 <!-- Redirect Popup -->
 <div id="redirectPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center;padding:20px;box-sizing:border-box">
-<div style="background:#121a2e;border:1px solid rgba(255,107,53,0.3);border-radius:16px;padding:28px 20px;max-width:420px;width:100%;box-sizing:border-box;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5)">
+<div style="background:#121a2e;border:1px solid rgba(233,69,96,0.3);border-radius:16px;padding:28px 20px;max-width:420px;width:100%;box-sizing:border-box;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5)">
 <h2 style="color:#fff;font-size:clamp(1.1rem,4vw,1.5rem);margin:0 0 12px;font-weight:700">🚀 Want to see ClawBox in action?</h2>
 <p style="color:#9ca3af;margin:0 0 8px;font-size:1rem">Visit the official ClawBox store for full specs, demos, and ordering.</p>
-<p id="countdownText" style="color:#ff6b35;margin:0 0 24px;font-size:0.9rem">Redirecting in <span id="countdown">10</span> seconds...</p>
+<p id="countdownText" style="color:#e94560;margin:0 0 24px;font-size:0.9rem">Redirecting in <span id="countdown">10</span> seconds...</p>
 <div style="display:flex;gap:10px;justify-content:center;flex-direction:column;align-items:center">
-<a href="https://openclawhardware.dev/" id="acceptBtn" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#ff6b35,#ff3864);color:#fff;text-decoration:none;border-radius:12px;font-size:1.05rem;font-weight:600;transition:transform .2s">Yes, take me there →</a>
+<a href="https://openclawhardware.dev/" id="acceptBtn" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;text-decoration:none;border-radius:12px;font-size:1.05rem;font-weight:600;transition:transform .2s">Yes, take me there →</a>
 <button id="cancelBtn" onclick="closePopup()" style="padding:12px 24px;background:transparent;color:#9ca3af;border:1px solid #374151;border-radius:12px;font-size:1.05rem;cursor:pointer;transition:all .2s">No thanks, stay here</button>
 </div>
 </div>
@@ -291,4 +294,5 @@ if((window.innerHeight+window.scrollY)>=document.body.offsetHeight-100){showPopu
 });
 })();
 </script>
+</body>
 </html>
