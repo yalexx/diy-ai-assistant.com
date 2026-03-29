@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIY AI Assistant: Complete Build Guide 2026 | Parts, Steps & Costs</title>
+<meta name="description" content="Complete DIY AI assistant build guide for 2026. Full parts list, step-by-step setup, realistic time estimates, and honest cost comparison vs pre-built options.">
+<link rel="canonical" href="https://diy-ai-assistant.com/guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Quicksand',sans-serif;background:#1a1a2e;color:#eaeaea;min-height:100vh;line-height:1.7}
+a{color:#e94560;text-decoration:none}a:hover{text-decoration:underline}
+.hero{text-align:center;padding:60px 20px 40px}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);color:#e94560;margin-bottom:16px;font-weight:700}
+.hero p{max-width:680px;margin:0 auto;font-size:1.1rem;color:#b0b0c8}
+.content-section{max-width:800px;margin:40px auto;padding:0 20px}
+.content-section h2{color:#e94560;font-size:1.5rem;margin-bottom:20px;font-weight:700}
+.content-section h3{color:#eaeaea;font-size:1.15rem;margin:24px 0 12px;font-weight:600}
+.content-section p,.content-section li{color:#b0b0c8;font-size:.97rem;margin-bottom:12px}
+.content-section ul{padding-left:20px;margin-bottom:16px}
+.content-section li{margin-bottom:8px}
+.content-section strong{color:#eaeaea}
+.steps{max-width:760px;margin:50px auto;padding:0 20px}
+.step{display:flex;gap:24px;align-items:flex-start;margin-bottom:36px;position:relative}
+.step::after{content:'';position:absolute;left:30px;top:68px;bottom:-36px;width:2px;background:linear-gradient(to bottom,#e94560 0%,#16213e 100%)}
+.step:last-child::after{display:none}
+.step-circle{width:60px;height:60px;min-width:60px;border-radius:50%;background:linear-gradient(135deg,#e94560,#ff6b6b);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#fff;position:relative;z-index:1}
+.step-content{background:#16213e;border-radius:14px;padding:24px 28px;border:1px solid #243456;flex:1}
+.step-content h3{color:#e94560;margin-bottom:8px;font-size:1.1rem;font-weight:600}
+.step-content p{color:#b0b0c8;font-size:.95rem;margin-bottom:0}
+.highlight-box{background:linear-gradient(135deg,rgba(233,69,96,.08),rgba(255,107,107,.05));border:1px solid rgba(233,69,96,.25);border-radius:14px;padding:28px;margin:30px 0}
+.highlight-box h3{color:#e94560;margin-top:0;margin-bottom:12px}
+.highlight-box p{color:#b0b0c8;font-size:.97rem;margin-bottom:8px}
+.cmp-wrap{overflow-x:auto;margin:20px 0}
+.cmp-tbl{width:100%;border-collapse:collapse;min-width:560px}
+.cmp-tbl th{padding:12px 16px;text-align:left;font-size:.85rem;color:#b0b0c8;border-bottom:2px solid #243456}
+.cmp-tbl th.hi{color:#e94560;border-bottom-color:#e94560}
+.cmp-tbl td{padding:12px 16px;border-bottom:1px solid #243456;color:#b0b0c8;font-size:.88rem}
+.cmp-tbl td.hi{color:#eaeaea;font-weight:600}
+.cmp-tbl tr:last-child td{border-bottom:none}
+.ck{color:#22c55e}.cx{color:#ef4444}
+.faq-item{background:#16213e;border-radius:12px;padding:20px 24px;margin-bottom:12px;border:1px solid #243456}
+.faq-q{font-weight:600;color:#eaeaea;margin-bottom:8px}
+.faq-a{color:#b0b0c8;font-size:.9rem}
+.cta{text-align:center;padding:50px 20px}
+.cta h2{color:#eaeaea;margin-bottom:20px;font-size:1.3rem;font-weight:600}
+.cta a{display:inline-block;padding:16px 40px;background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;text-decoration:none;border-radius:12px;font-size:1.15rem;font-weight:700;transition:transform .2s}
+.cta a:hover{transform:scale(1.05);text-decoration:none}
+footer{text-align:center;padding:30px;color:#4b5563;font-size:.85rem;border-top:1px solid #243456}
+footer a{color:#e94560}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to build a DIY AI assistant from scratch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Budget 10-20 hours for a complete DIY AI assistant build: 1-2 hours for hardware assembly, 2-3 hours for OS installation and initial configuration, 3-5 hours for software setup (Ollama, model downloads, OpenClaw or similar), and 2-5 hours for troubleshooting and tuning. Experienced Linux users can complete it faster; beginners should expect the higher end."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the total cost of a DIY AI assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Jetson Orin Nano-based DIY AI assistant costs approximately €430-530 in hardware (Jetson dev kit ~€350-400, NVMe SSD ~€50-70, enclosure/PSU ~€30-60). Add €15/year electricity. Compare this to a pre-built ClawBox at €549 all-in — the price delta is small, but the DIY route requires 10-20 hours of your time for setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What skills do I need to build a DIY AI assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need: basic Linux command line comfort (navigating directories, editing files, running commands), networking basics (assigning static IPs, port forwarding if needed), and patience for troubleshooting. You do NOT need programming experience. Most modern AI inference software (Ollama, Open WebUI) has excellent documentation and active communities."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<section class="hero">
+  <h1>DIY AI Assistant: Complete Build Guide 2026</h1>
+  <p>Everything you need to build a <strong>DIY AI assistant</strong> that runs privately on your own hardware — full parts list, step-by-step setup, realistic time estimates, and an honest comparison with pre-built alternatives.</p>
+</section>
+
+<section class="content-section">
+  <h2>Why Build a DIY AI Assistant?</h2>
+  <p>A <strong>DIY AI assistant</strong> gives you something no cloud service can match: complete ownership. Your conversations stay on your hardware. Your AI runs when your internet is down. There's no subscription that can be cancelled, no price hike you can't avoid, and no corporate policy deciding what your AI can discuss.</p>
+  <p>In 2026, building your own AI assistant has never been more accessible. Open-source models like Llama 3, Mistral, and Qwen 2.5 are genuinely competitive with GPT-4 for most everyday tasks. The ecosystem of local inference tools (Ollama, llama.cpp, LM Studio) has matured dramatically. And the hardware — particularly the NVIDIA Jetson Orin Nano — hits a sweet spot of performance, efficiency, and price that makes a DIY AI assistant viable for non-engineers for the first time.</p>
+
+  <h2>Complete Parts List</h2>
+  <ul>
+    <li><strong>NVIDIA Jetson Orin Nano 8GB Developer Kit</strong> (~€350-400) — the core compute. 67 TOPS of AI acceleration, 8GB unified memory shared between CPU and GPU. This is your AI engine.</li>
+    <li><strong>512GB NVMe SSD</strong> (~€50-70, M.2 2280 form factor) — AI models are large. Llama 3 8B is ~5GB; you'll want multiple models available. 512GB is the practical minimum.</li>
+    <li><strong>Quality USB-C Power Supply</strong> (~€20-30, 65W minimum) — the Jetson requires a stable power supply. Don't cheap out here; power instability causes corrupted writes and random crashes.</li>
+    <li><strong>Micro SD Card</strong> (~€15-20, 64GB minimum) — for the OS. The Jetson boots from SD card; NVMe is used for additional storage.</li>
+    <li><strong>Enclosure (optional)</strong> (~€20-40) — for permanent desk deployment, an enclosure protects the board and improves cooling. The Waveshare Jetson case is a popular choice.</li>
+    <li><strong>Ethernet cable + router port</strong> — wired connection is strongly recommended for initial setup. Wi-Fi adapter is optional for later.</li>
+  </ul>
+  <p><strong>Total hardware budget: €455-575</strong></p>
+</section>
+
+<div class="steps">
+  <h2 style="color:#e94560;text-align:center;margin-bottom:40px;font-size:1.6rem">Step-by-Step Build Guide</h2>
+  
+  <div class="step">
+    <div class="step-circle">1</div>
+    <div class="step-content">
+      <h3>Flash the OS (~45 min)</h3>
+      <p>Download NVIDIA JetPack SDK from developer.nvidia.com. Flash the SD card using Balena Etcher or the official SDK Manager. First boot takes 10-15 minutes as the system expands and configures itself. Create your user account when prompted.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-circle">2</div>
+    <div class="step-content">
+      <h3>Configure the NVMe SSD (~30 min)</h3>
+      <p>Insert the NVMe drive and use <code>sudo fdisk</code> to partition it. Format with ext4, mount to <code>/home</code> or a dedicated <code>/ai</code> directory. This is where all your AI models will live — keep it separate from the system SD card for easy backups.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-circle">3</div>
+    <div class="step-content">
+      <h3>Install Ollama (~15 min)</h3>
+      <p>Run <code>curl -fsSL https://ollama.com/install.sh | sh</code>. Ollama handles model downloads, GPU acceleration, and the inference API automatically. Set the models directory to your NVMe: <code>OLLAMA_MODELS=/ai/models</code> in your environment.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-circle">4</div>
+    <div class="step-content">
+      <h3>Download Your First Models (~30-60 min)</h3>
+      <p>Start with <code>ollama pull llama3:8b</code> for a capable general assistant (~5GB). Add <code>ollama pull mistral:7b</code> as an alternative. Download speed depends on your connection; 7B models are 4-6GB each.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-circle">5</div>
+    <div class="step-content">
+      <h3>Install an Assistant Layer (~1-3 hrs)</h3>
+      <p>Raw Ollama gives you an API. For a true <strong>DIY AI assistant</strong>, you need an interface. Options: Open WebUI (browser-based chat), OpenClaw (multi-platform assistant with Telegram/WhatsApp/Discord integration and browser automation), or a simple custom Python script for basic Q&A.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-circle">6</div>
+    <div class="step-content">
+      <h3>Configure Networking & Remote Access (~1-2 hrs)</h3>
+      <p>Assign a static local IP. Set up Tailscale or a reverse proxy (Caddy/nginx) for secure remote access. Connect your messaging apps if using OpenClaw. Test that your assistant responds from your phone — that's when it clicks as a real DIY AI assistant, not just a demo.</p>
+    </div>
+  </div>
+</div>
+
+<section class="content-section">
+  <h2>Time Estimate: Reality Check</h2>
+  <p>Experienced Linux users: 6-8 hours total. Comfortable-but-not-expert users: 12-18 hours. Complete beginners: 20-30 hours, possibly spread across multiple sessions.</p>
+  <p>The most common bottlenecks: SD card flashing issues (use a quality card), NVMe mounting confusion, and networking/firewall configuration for remote access.</p>
+
+  <h2>DIY vs Pre-Built: Honest Comparison</h2>
+  <div class="cmp-wrap">
+    <table class="cmp-tbl">
+      <thead>
+        <tr>
+          <th>Factor</th>
+          <th>DIY AI Assistant</th>
+          <th class="hi">Pre-Built (ClawBox)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hardware cost</td>
+          <td>€455-575</td>
+          <td class="hi">€549</td>
+        </tr>
+        <tr>
+          <td>Setup time</td>
+          <td>10-30 hours</td>
+          <td class="hi">5 minutes</td>
+        </tr>
+        <tr>
+          <td>Technical skill needed</td>
+          <td>Intermediate Linux</td>
+          <td class="hi">None</td>
+        </tr>
+        <tr>
+          <td>Customization</td>
+          <td class="ck">Full control</td>
+          <td>High (fully open)</td>
+        </tr>
+        <tr>
+          <td>Updates & maintenance</td>
+          <td>Manual</td>
+          <td class="hi">Guided</td>
+        </tr>
+        <tr>
+          <td>Support</td>
+          <td>Community forums</td>
+          <td class="hi">Direct support</td>
+        </tr>
+        <tr>
+          <td>AI performance</td>
+          <td class="hi">67 TOPS (same hardware)</td>
+          <td class="hi">67 TOPS (same hardware)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight-box">
+    <h3>💡 Bottom Line</h3>
+    <p>If you enjoy the build process and have Linux experience, the <strong>DIY AI assistant</strong> route is genuinely rewarding and saves €0-100 over pre-built. If you want your AI assistant working today rather than two weekends from now, a pre-built option like <a href="https://openclawhardware.dev/" target="_blank">ClawBox</a> is the smarter investment of your time.</p>
+  </div>
+
+  <p>See also: <a href="https://personal-ai-server.com/guide.html">Personal AI Server Guide</a> · <a href="https://private-ai-hardware.com/guide.html">Private AI Hardware Buyer's Guide</a> · <a href="https://plug-and-play-ai.com/guide.html">Plug and Play AI Options</a></p>
+
+  <h2 style="margin-top:2rem">Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <div class="faq-q">How long does it take to build a DIY AI assistant from scratch?</div>
+    <div class="faq-a">Budget 10-20 hours for a complete build: 1-2 hrs for hardware assembly, 2-3 hrs for OS setup, 3-5 hrs for software configuration, and 2-5 hrs for troubleshooting. Experienced Linux users are faster; beginners should expect the higher end.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What is the total cost of a DIY AI assistant?</div>
+    <div class="faq-a">Jetson-based DIY: approximately €430-530 in hardware plus €15/year electricity. Compare this to a pre-built ClawBox at €549 all-in — the price delta is small, but DIY requires 10-20 hours of your time for setup and configuration.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What skills do I need to build a DIY AI assistant?</div>
+    <div class="faq-a">Basic Linux command line comfort, networking basics, and patience for troubleshooting. You do NOT need programming experience. Most modern AI inference software (Ollama, Open WebUI) has excellent documentation and active communities.</div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Want It Working Today Instead of Next Weekend?</h2>
+  <a href="https://openclawhardware.dev/" target="_blank">Get ClawBox Pre-Built — €549</a>
+</section>
+
+<footer>
+  <p>© 2026 diy-ai-assistant.com · <a href="/">Home</a> · <a href="https://openclawhardware.dev/" target="_blank">ClawBox</a></p>
+</footer>
+</body>
+</html>
